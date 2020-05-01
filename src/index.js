@@ -9,7 +9,7 @@ import {
   PokemonDataView,
 } from './pokemon'
 
-function PokemonInfo({pokemonName}) {
+export function PokemonInfo({pokemonName}) {
   const [state, setState] = React.useState({
     status: 'idle',
     pokemon: null,
@@ -56,7 +56,7 @@ function ErrorFallback({error, resetErrorBoundary}) {
   )
 }
 
-function AppErrorBoundary({keys = [], onReset, children}) {
+export function AppErrorBoundary({keys = [], onReset, children}) {
   const [errorAndComponentStack, setErrorAndComponentStack] = React.useState([
     null,
     null,
@@ -117,4 +117,4 @@ function App() {
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+// ReactDOM.render(<App />, document.getElementById('root'))
