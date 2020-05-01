@@ -1,7 +1,7 @@
 import './styles.css'
 import React from 'react'
 import { mount } from 'cypress-react-unit-test'
-import { PokemonInfo, AppErrorBoundary } from '.'
+import { PokemonInfo, AppErrorBoundary } from './App'
 
 describe('PokemonInfo', () => {
   it('works without error boundary', () => {

@@ -1,7 +1,7 @@
 import './styles.css'
 import React from 'react'
 import { mount } from 'cypress-react-unit-test'
-import { App } from '.'
+import { App } from './App'
 
 describe('App', () => {
   it('works', () => {
