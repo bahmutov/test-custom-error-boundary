@@ -33,10 +33,10 @@ react-codesandbox@0.1.0 /Users/gleb/git/test-custom-error-boundary
   └── webpack@4.42.0
 ```
 
-- I think because of transient dependencies, the user could get an error when doing `react-scripts start`, which looks scary and requires `.env` file with `SKIP_PREFLIGHT_CHECK=true`.
-- `index.js` included `ReactDOM.render(<App />, document.getElementById('root'))` which just generated a cryptic error. Had to refactor the app to get around (or comment it out)
-- if the user forgets to include `cypress-react-unit-test/support` from the support file, the error is cryptic
-- custom error boundary works
+- I think because of transient dependencies, the user could get an error when doing `react-scripts start`, which looks scary and requires `.env` file with `SKIP_PREFLIGHT_CHECK=true`. [#157](https://github.com/bahmutov/cypress-react-unit-test/issues/157)
+- `index.js` included `ReactDOM.render(<App />, document.getElementById('root'))` which just generated a cryptic error. Had to refactor the app to get around (or comment it out) [#158](https://github.com/bahmutov/cypress-react-unit-test/issues/158)
+- if the user forgets to include `cypress-react-unit-test/support` from the support file, the error is cryptic [#159](https://github.com/bahmutov/cypress-react-unit-test/issues/159)
+- custom error boundary works, seems to be in Cypress core
 
 ![Custom error boundary](images/custom-boundary.png)
 
