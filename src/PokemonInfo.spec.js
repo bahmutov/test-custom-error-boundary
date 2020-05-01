@@ -6,8 +6,10 @@ import { PokemonInfo, AppErrorBoundary } from '.'
 describe('PokemonInfo', () => {
   it('works without error boundary', () => {
     const StylesPokemonInfo = () => (
-      <div className="pokemon-info">
-        <PokemonInfo pokemonName="pikachu" />
+      <div className="pokemon-info-app">
+        <div className="pokemon-info">
+          <PokemonInfo pokemonName="pikachu" />
+        </div>
       </div>
     )
     mount(<StylesPokemonInfo />)
@@ -34,10 +36,12 @@ describe('PokemonInfo', () => {
     const pokemonName = 'unknown'
     const onReset = cy.stub().as('reset')
     const ProtectedPokemon = () => (
-      <div className="pokemon-info">
-        <AppErrorBoundary onReset={onReset} keys={[pokemonName]}>
-          <PokemonInfo pokemonName={pokemonName} />
-        </AppErrorBoundary>
+      <div className="pokemon-info-app">
+        <div className="pokemon-info">
+          <AppErrorBoundary onReset={onReset} keys={[pokemonName]}>
+            <PokemonInfo pokemonName={pokemonName} />
+          </AppErrorBoundary>
+        </div>
       </div>
     )
     mount(<ProtectedPokemon />)

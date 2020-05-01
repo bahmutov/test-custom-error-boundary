@@ -3,6 +3,6 @@
   "experimentalComponentTesting": true,
   "componentFolder": "src",
   "testFiles": "**/*spec.js",
-  "viewportHeight": 460,
+  "viewportHeight": 560,
   "viewportWidth": 360
 }

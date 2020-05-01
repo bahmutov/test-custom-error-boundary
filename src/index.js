@@ -93,7 +93,7 @@ export function AppErrorBoundary({keys = [], onReset, children}) {
   )
 }
 
-function App() {
+export function App() {
   const [pokemonName, setPokemonName] = React.useState('')
 
   function handleSubmit(newPokemonName) {
