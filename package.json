@@ -21,5 +21,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "cypress": "4.5.0",
+    "cypress-react-unit-test": "4.1.0"
+  }
 }
