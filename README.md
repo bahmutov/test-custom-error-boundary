@@ -18,6 +18,10 @@ Trying to fetch unknown pokemon leads to a broken test
 
 ![Uncaught error](images/uncaught-error.png)
 
+## Run
+
+After installing dependencies, to run integration tests `yarn run dev`. To run component tests just need `yarn cypress open`.
+
 ## Observations
 
 - ~~Initially `react-scripts@3.4.1` did not include webpack?! Had to drop-down to `react-scripts@3.3.1`~~ Seems like a fluke, re-installing and I can find it
@@ -29,6 +33,7 @@ react-codesandbox@0.1.0 /Users/gleb/git/test-custom-error-boundary
   └── webpack@4.42.0
 ```
 
+- I think because of transient dependencies, the user could get an error when doing `react-scripts start`, which looks scary and requires `.env` file with `SKIP_PREFLIGHT_CHECK=true`.
 - `index.js` included `ReactDOM.render(<App />, document.getElementById('root'))` which just generated a cryptic error.
 - if the user forgets to include `cypress-react-unit-test/support` from the support file, the error is cryptic
 - custom error boundary works
