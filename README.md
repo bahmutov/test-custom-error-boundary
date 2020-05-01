@@ -34,13 +34,13 @@ react-codesandbox@0.1.0 /Users/gleb/git/test-custom-error-boundary
 ```
 
 - I think because of transient dependencies, the user could get an error when doing `react-scripts start`, which looks scary and requires `.env` file with `SKIP_PREFLIGHT_CHECK=true`.
-- `index.js` included `ReactDOM.render(<App />, document.getElementById('root'))` which just generated a cryptic error.
+- `index.js` included `ReactDOM.render(<App />, document.getElementById('root'))` which just generated a cryptic error. Had to refactor the app to get around (or comment it out)
 - if the user forgets to include `cypress-react-unit-test/support` from the support file, the error is cryptic
 - custom error boundary works
 
 ![Custom error boundary](images/custom-boundary.png)
 
-BUT
+**BUT**
 
 We can click the "try again" button ourselves and it triggers the stub, but if we try to wait or do any command from the test, it fails the test
 
@@ -61,7 +61,7 @@ cy.wait(3000)
 
 ![Try to wait and the test fails](images/try-wait.png)
 
-^^ Note: this is a bug, and it happens even during e2e test in [cypress/integration/spec.js](cypress/integration/spec.js)
+^^ Note: this is a bug, and it happens even during e2e test in [cypress/integration/spec.js](cypress/integration/spec.js). Opened [#7196](https://github.com/cypress-io/cypress/issues/7196)
 
 ![E2E fails too](images/e2e-fails.png)
 
